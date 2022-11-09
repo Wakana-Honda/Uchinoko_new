@@ -1,0 +1,21 @@
+
+<%= form_with model: @genre, url: '/genre', method: :post do |f| %>
+ <%= render 'shared/errors', model: f.object %>
+ <%= f.label :ジャンル名 %>
+ <%= f.text_field :name,class:"name" %>
+ <%= f.submit '新規登録',class:"btn btn-info" %>
+<% end %>
+
+<div class = "my-3"><strong><u>ジャンル一覧</u></strong></div>
+ 
+ <% @genres.each do |genre| %>
+  <div class = "mt-2 mb-3">
+   <%= genre.name %>
+   <%= link_to "編集する", edit_genre_path(genre), class:"btn btn-success" %>
+   <%= link_to "削除", genre_path(genre),method: :delete,
+     "data-confirm" => "関連するフードの記録も削除されます。本当に削除しますか？", class:"btn btn-danger" %>
+   </div>
+  <% end %>
+  
+ 
+

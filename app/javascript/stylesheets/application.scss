@@ -1,0 +1,215 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import "skippr"; 
+
+body{
+ font-family:Meiryo ;
+ color: #555;
+ }
+ 
+main{
+  // background-color:#ffffcc; 
+  // linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
+  background: url(/images/back.jpeg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-attachment: fixed;
+ }
+ 
+ #container{
+  height: 500px;
+}
+ 
+ .image1 {
+  background-image: url(/images/image1.jpeg);
+ }
+ .image2 {
+  background-image: url(/images/image2.jpeg);
+ }
+ .image3 {
+  background-image: url(/images/image3.jpeg);
+ }
+ 
+ 
+ .btn-dark {
+   color: #fff;
+   background-color: #800000;
+   border-color: #800000;
+ }
+ 
+.btn-dark:hover, .btn-dark:focus, 
+.btn-dark:active, .btn-dark:active:focus, .btn-dark:active:hover, .btn-dark:active.focus,
+.btn-dark.active, .btn-dark.active:focus, .btn-dark.active:hover, .btn-dark.active.focus,
+.open > .dropdown-toggle.btn-dark, 
+.open > .dropdown-toggle.btn-dark:hover,
+.open > .dropdown-toggle.btn-dark:focus, 
+.open > .dropdown-toggle.btn-dark.focus,
+.btn-dark.disabled:hover, .btn-dark[disabled]:hover, fieldset[disabled] .btn-dark:hover,
+.btn-dark.disabled:focus, .btn-dark[disabled]:focus, fieldset[disabled] .btn-dark:focus,
+.btn-dark.disabled.focus, .btn-dark[disabled].focus, fieldset[disabled] .btn-dark.focus {
+    background: #800000; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+    color: #fff; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
+}
+ 
+ .btn-primary{
+  color: #fff;
+   background-color: #bc8f8f;
+   border-color: #bc8f8f;
+ }
+ 
+.btn-primary:hover, .btn-primary:focus, 
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary, 
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus, 
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+    background: #bc8f8f; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+    color: #fff; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
+}
+
+ 
+ .line{
+  white-space: nowrap;
+  overflow: hidden;
+ }
+ 
+ .textb br {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+ .textb br {
+   display: inline;
+  }
+}
+
+ul{
+ list-style: none;
+}
+
+.alert-warning{
+ color: #555;
+ background-color:#ffe6e6;
+ border-color:#ff0000;
+}
+
+// ミニバーナー
+.fixed_btn { 
+position: fixed;
+bottom: 10px;
+right: 10px;
+padding: 6px 40px;
+}
+
+// ビックバーナー
+.fixed_btn_lg { 
+position: fixed;
+bottom: 10px;
+center: 10px;
+}
+
+.pet_log{
+ background: url(/images/pet_log.png);
+ // background-color :#fffde8;
+}
+
+.food_info{
+ border: 4px solid; 
+ border-color: #d3d3d3;
+ border-radius: 8px;
+ background-color :#ffffff;
+}
+
+.table{
+  // width: 400px;
+  max-width: 100%;
+}
+
+.sticky {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  background: #f7f7f7;
+  border-left: solid 6px #9acd32;/*左線*/
+  color: #696969;/*文字色*/
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+.sticky:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+.fuwafuwa {
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+  // width: 70px;
+  // height: 70px;
+  margin-top: 15px;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}
+
+.hiddenA {
+  text-align: center;
+  animation-name: hidden1;
+  animation-duration: 5.0s;
+  // animation-iteration-count: infinite;
+  margin-top: 15px;
+}
+ 
+@keyframes hidden1 {
+ 
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.liner{
+ position: relative;
+ background: linear-gradient(transparent 40%, yellow 40%);
+}
+
+.pet-box {
+    position: relative;
+    display: inline-block;
+}
+
+.nameplate {
+  position: absolute;
+  display: inline-block;
+  padding: 0em 0.5em;
+  text-decoration: none;
+  background: #b36b77;
+  color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px #b36b77;
+  border: dashed 1px #FFF;
+  bottom: 0px;    /* 記述追加 重ねたい Y位置を指定 */
+  right: 0px;   /* 記述追加 重ねたい X位置を指定 */
+}
+
+.nameplate:hover {
+  border: dotted 1px #FFF;
+}

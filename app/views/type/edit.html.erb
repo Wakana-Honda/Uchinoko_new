@@ -1,0 +1,7 @@
+<h3><strong>フードタイプ編集</strong></h3>
+
+<%= form_with model: @type do |f| %>
+ <%= f.label :タイプ名 %>
+ <%= f.text_field :name,class:"name" %>
+ <%= f.submit '変更を保存', class:"btn btn-info" %>
+<% end %>
