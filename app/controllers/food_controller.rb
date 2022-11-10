@@ -32,13 +32,9 @@ class FoodController < ApplicationController
 
   def show
    @food = Food.find(params[:id])
+   @foods = current_end_user.foods
    @type = Type.find(@food.type_id)
    @genre = Genre.find(@food.genre_id)
-   # # if @genre.present?
-   #  @genre = Genre.find(@food.genre_id)
-   # else
-   #  @genre = []
-   # end
   end
 
   def edit

@@ -7,5 +7,6 @@ class Record < ApplicationRecord
   validates :food_id, presence: true
   validates :amount, presence: true
 
+  default_scope -> { order(created_at: :desc) }
   
 end

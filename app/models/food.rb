@@ -18,15 +18,11 @@ class Food < ApplicationRecord
   end
    
   def previous
-   Food.where("id < ?", self.id).order("id DESC").first
+   end_user.foods.where("id < ?", self.id).order("id DESC").first
   end
   def next
-   Food.where("id > ?", self.id).order("id ASC").first
+   end_user.foods.where("id > ?", self.id).order("id ASC").first
   end
-  
-  # def genre_id
-  #  genre_id ? genre_id : 'no name'
-  # end
   
    validates :name, presence: true
    validates :type_id, presence: true

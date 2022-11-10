@@ -15,12 +15,7 @@ class RecordController < ApplicationController
    end
   end
 
- # def show
- #   @record = Record.find(params[:id])
- # end
-
   def index
-   # binding.pry
    @records = Record.all
    # @records = Record.order(created_at: :desc)
    @records = current_end_user.records
