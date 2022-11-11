@@ -20,7 +20,8 @@
  
  <div class="form-group">
   <%= f.label :genre_id,'ジャンル' %>
-  <%= f.collection_select :genre_id, @genres, :id, :name, options = { include_blank: "選択してください" } %>
+  <%= f.collection_select :genre_id, @genres, :id, :name, 
+  　options = { include_blank: "選択してください" } %>
   <button type="button" class="btn btn-sm btn-success ml-3" data-toggle="modal" 
                 data-target="#genreModal" data-whatever="@genre">ジャンルを追加</button>
  
