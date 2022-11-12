@@ -17,17 +17,79 @@ main{
  }
  
  #container{
-  height: 500px;
+  height: 400px;
+  width: 100%;
 }
- 
+
+.texta{
+  bottom: 10px;
+  z-index: 9999;
+}
+
+@keyframes sample{
+  0% {
+    width: 120px;
+  }
+  100% {
+    width: 360px;
+  }
+}
+
+.textline {
+  margin-bottom: 10px;
+  background-color: #00b300;
+  color: #fff;
+  animation: sample 2.5s 0s;
+  width: 360px;
+}
+
+.textline-b {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background-color: #e6e600;
+  color: #000;
+  animation: sample 2.5s 0s;
+  width: 360px;
+}
+// .textb br {
+//   display: none;
+// }
+
+// @media only screen and (max-width: 500px) {
+//  .textb br {
+//   display: inline;
+//   }
+// }
+
  .image1 {
-  background-image: url(/images/image1.jpeg);
+  background-image: url(/images/image1.jpg);
+  background-color: rgba(160,144,137,0.4);
+  //混合モードの指定になります。
+  background-blend-mode:lighten;
+  //ついでに画像をページ全体に表示する
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 50px ;
  }
  .image2 {
-  background-image: url(/images/image2.jpeg);
+  background-image: url(/images/image2.jpg);
+  background-color: rgba(160,144,137,0.4);
+  //混合モードの指定になります。
+  background-blend-mode:lighten;
+  //ついでに画像をページ全体に表示する
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
  }
  .image3 {
-  background-image: url(/images/image3.jpeg);
+  background-image: url(/images/image3.jpg);
+  background-color: rgba(160,144,137,0.4);
+  //混合モードの指定になります。
+  background-blend-mode:lighten;
+  //ついでに画像をページ全体に表示する
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
  }
  
  
@@ -77,16 +139,6 @@ main{
   overflow: hidden;
  }
  
- .textb br {
-  display: none;
-}
-
-@media only screen and (max-width: 500px) {
- .textb br {
-   display: inline;
-  }
-}
-
 ul{
  list-style: none;
 }

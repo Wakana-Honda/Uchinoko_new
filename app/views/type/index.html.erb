@@ -10,6 +10,10 @@
 
 <div class = "my-3"><strong><u>タイプ一覧</u></strong></div>
 
+<% if @types.count == 0 %>  
+  <div class = "mb-3">タイプが登録されていません。<br>フードタイプを登録しましょう！<br>ex.ドライタイプ,ウエットタイプetc..</div>
+<% else %>
+
   <% @types.each do |type| %>
   <div class = "mt-2 mb-3">
     <%= type.name %>
@@ -18,4 +22,6 @@
       "data-confirm" => "関連するフードの記録も削除されます。本当に削除しますか？", class:"btn btn-danger mb-3" %>
    </div>
   <% end %>
+  
+<% end %>
   

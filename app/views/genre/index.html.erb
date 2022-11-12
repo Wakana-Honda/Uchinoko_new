@@ -8,14 +8,20 @@
 
 <div class = "my-3"><strong><u>ジャンル一覧</u></strong></div>
  
- <% @genres.each do |genre| %>
-  <div class = "mt-2 mb-3">
-   <%= genre.name %>
-   <%= link_to "編集する", edit_genre_path(genre), class:"btn btn-success" %>
-   <%= link_to "削除", genre_path(genre),method: :delete,
+<% if @genres.count == 0 %>  
+  <div class = "mb-3">ジャンルが登録されていません。<br>フードジャンルを登録しましょう！<br>ex.メインフード,おやつetc..</div>
+<% else %>
+ 
+  <% @genres.each do |genre| %>
+   <div class = "mt-2 mb-3">
+    <%= genre.name %>
+    <%= link_to "編集する", edit_genre_path(genre), class:"btn btn-success" %>
+    <%= link_to "削除", genre_path(genre),method: :delete,
      "data-confirm" => "関連するフードの記録も削除されます。本当に削除しますか？", class:"btn btn-danger" %>
    </div>
   <% end %>
+  
+ <% end %>
   
  
 

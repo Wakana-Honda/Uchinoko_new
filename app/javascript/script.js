@@ -1,6 +1,3 @@
-// let title = "javascriptが使えました";
-// alert(title);
-
 $(document).ready(function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
@@ -14,7 +11,7 @@ $(document).ready(function () {
     // 子要素の種類('div' or 'img')
     childrenElementType : 'div',
     // ナビゲーション矢印の表示(trueで表示)
-    arrows : true,
+    arrows : false,
     // スライドショーの自動再生(falseで自動再生なし)
     autoPlay : true,
     // 自動再生時のスライド切替間隔(ミリ秒)
