@@ -7,6 +7,8 @@ class RecordController < ApplicationController
   
   def create
    @record = Record.new(record_params)
+   @pets = current_end_user.pets
+   @foods = current_end_user.foods
    @record.end_user_id = current_end_user.id
    if @record.save
     redirect_to record_index_path

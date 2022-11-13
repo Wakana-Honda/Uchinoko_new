@@ -1,10 +1,10 @@
+ <%= render 'shared/aboutlink' %>
 
 <%= form_with model: @type, url: '/type', method: :post do |f| %>
- <%= render 'shared/errors', model: f.object %>
-
- <%= f.label :タイプ %>
- <%= f.text_field :name %>
- <%= f.submit '新規登録',class:"btn btn-info" %>
+ <div><%= render 'shared/errors', model: f.object %></div>
+  <%= f.label :タイプ %>
+  <%= f.text_field :name %>
+  <%= f.submit '新規登録',class:"btn btn-info" %>
 <% end %>
 
 

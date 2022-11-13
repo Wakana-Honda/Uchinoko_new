@@ -1,6 +1,7 @@
+ <%= render 'shared/aboutlink' %>
 
 <%= form_with model: @genre, url: '/genre', method: :post do |f| %>
- <%= render 'shared/errors', model: f.object %>
+ <div><%= render 'shared/errors', model: f.object %></div>
  <%= f.label :ジャンル名 %>
  <%= f.text_field :name,class:"name" %>
  <%= f.submit '新規登録',class:"btn btn-info" %>
