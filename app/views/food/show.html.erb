@@ -1,5 +1,7 @@
  <%= render 'shared/aboutlink' %>
 
+<div class = "container-lg">
+
 <div class = "row">
  <div class = "col-md-6 text-center">
   <%= image_tag @food.get_food_image(300,300) %>
@@ -41,4 +43,6 @@
   <%= link_to "フードを編集する", edit_food_path(@food.id), class:"btn btn-success" %>
   <%= link_to "フード一覧に戻る", food_index_path, class:"btn btn-secondary" %>
  </div>
+ 
+</div>
 

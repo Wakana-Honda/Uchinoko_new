@@ -1,4 +1,6 @@
  <%= render 'shared/aboutlink' %>
+ 
+<div class = "container-lg">
 
 <%= form_with model: @food do |f| %>
 
@@ -33,5 +35,6 @@
  <%= link_to "削除", food_path(@food.id), method: :delete, 
  "data-confirm" => "これまでのデータが全て削除されます。本当に削除しますか？",class:"btn btn-danger mb-3" %>
 
- 
 <% end %>
+
+</div>

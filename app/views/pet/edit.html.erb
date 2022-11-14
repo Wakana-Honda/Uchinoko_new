@@ -1,5 +1,7 @@
  <%= render 'shared/aboutlink' %>
 
+<div class = "container-lg">
+
 <%= form_with model: @pet do |f| %>
  <%= render 'shared/errors', model: f.object %>
 
@@ -38,3 +40,5 @@
     "data-confirm" => "これまでの記録も全て削除されます。本当に削除しますか？", class:"btn btn-danger mb-3" %>
   
 <% end %>
+
+</div>

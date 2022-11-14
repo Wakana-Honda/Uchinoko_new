@@ -162,6 +162,24 @@ ul{
   }
 }
 
+.alert-dismissible{
+  padding: 5px 5px 5px 3px;
+  font-size: 13px;
+}
+
+.alert-dismissible .close {
+    padding: 2px 3px 2px 0px;
+    font-size: 12px;
+  }
+  
+.alert{
+  color: #ff4500;
+}
+
+.notice{
+  border : none;
+}
+
 // ミニバーナー
 .fixed_btn { 
 position: fixed;

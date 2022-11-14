@@ -1,5 +1,7 @@
  <%= render 'shared/aboutlink' %>
 
+<div class = "container-lg">
+
 <% @pets.each do |pet| %>
 
 <div class ="border shadow pet_log my-3">
@@ -72,6 +74,8 @@
 
 <% end %>
 
+</div>
+
 <div class="fixed_bottom text-right">
  <%= link_to new_pet_path, method: :get, class:"btn btn-warning mr-3 my-3" do %>
   <i class="fas fa-paw"></i>
@@ -79,4 +83,6 @@
   <i class="fas fa-chevron-right"></i>
  <% end %>
 </div>
+
+
 

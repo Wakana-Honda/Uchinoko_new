@@ -1,4 +1,6 @@
  <%= render 'shared/aboutlink' %>
+ 
+<div class = "container-lg">
 
 <%= form_with model: @record do |f| %>
 
@@ -28,5 +30,7 @@
   <%= link_to "削除",record_path(@record.id),method: :delete,class:"btn btn-danger mb-3" %>
  
 <% end %>
+
+</div>
 
 <%= pie_chart Record.group(:amount).sum(:food_id) %>

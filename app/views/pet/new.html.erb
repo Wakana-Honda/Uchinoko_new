@@ -1,5 +1,7 @@
  <%= render 'shared/aboutlink' %>
 
+<div class = "container-lg">
+
 <%= form_with model: @pet, url: '/pet', method: :post do |f| %>
   
   <%= render 'shared/errors', model: f.object %>
@@ -38,3 +40,5 @@
 	
   <%= f.submit '登録する',class:"btn btn-info mb-3" %>
 <% end %>
+
+</div>
