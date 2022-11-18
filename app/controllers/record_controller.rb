@@ -19,7 +19,6 @@ class RecordController < ApplicationController
 
   def index
    @records = Record.all
-   # @records = Record.order(created_at: :desc)
    @records = current_end_user.records
   end
 

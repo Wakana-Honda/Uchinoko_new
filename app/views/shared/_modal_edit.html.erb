@@ -1,10 +1,6 @@
- <%= render 'shared/aboutlink' %>
- 
-<div class = "container-lg">
+<%= form_with model: record do |f| %>
 
-<%= form_with model: @record do |f| %>
-
- <%= render 'shared/errors', model: f.object %>
+ <%#= render 'shared/errors', model: f.object %>
 
  <div class="form-group">
   <%= f.label :うちの子の名前 %>
@@ -27,9 +23,6 @@
  </div>
  
   <%= f.submit '記録を更新する', class:"btn btn-info mb-3" %>
-  <%= link_to "削除",record_path(@record.id),method: :delete,class:"btn btn-danger mb-3" %>
+  <%#= link_to "削除",record_path(record.id),method: :delete,class:"btn btn-danger mb-3" %>
  
 <% end %>
-
-</div>
-

@@ -8,34 +8,89 @@
  <i class="fas fa-pen"></i>
 <% end %>
 
-<!--<= pie_chart Food.group(:name).count %>-->
-<div class="table-responsive">
- <table class="table table-light table-striped mt-3">
- 
+<!--<div class="table-responsive">-->
+<!-- <table class="table table-light table-striped mt-3">-->
 <% @records.each do |record| %>
-  <tr>
-   <th colspan = "5" ><%= record.created_at.strftime('%Y/%m/%d %H:%M') %></th>
-  </tr>
-  
-  <tr>
-   <td></td>
-   <td><%= record.pet.name %></td>
-   <td><%= record.food.name %></td>
-   <td><%= record.amount %></td>
-   <!--<td><%#= record.memo %></td>-->
-   <td>
+  <!--<tr>-->
+  <!-- <th colspan = "5" >-->
+ <div class = "record">
+ <div class = "memo" id="collapseParent">
+   <a class="btn btn-primary" data-toggle="collapse" data-target="#collapseMemo" 
+       aria-expanded="false" aria-controls="collapseMemo">
+    memo
+    </a>
+    <div class="collapse" data-parent="#collapseParent" id="collapseMemo">
+      <%= record.memo %>
+    </div>
+  </div>
+  <div>
+    <%= record.created_at.strftime('%Y/%m/%d %H:%M') %>
     <%= link_to edit_record_path(record) do %>
-    <i class="fas fa-edit"></i>
+     <i class="fas fa-edit"></i>
     <% end %>
-    <%#= link_to record_path(@record) %>
-   </td>
-  </tr>
+   <!--</th>-->
+   <!--<th>-->
+    <%= image_tag record.pet.get_pet_image(50,50),class:"rounded-circle mx-3" %>
+    <%= record.pet.name %>
+   </div>
+  <!-- </th>-->
+  <!--</tr>-->
+  
+  <!--<tr>-->
+  <!-- <td>
+  </td>-->
+  <div>
+    <%= image_tag record.food.get_food_image(50,50) %><%= record.food.name %>
+   <!--<td>-->
+    <%= record.amount %>
+    <!--</td>-->
+   <!--<td>-->
+   <!--<div class="row" id="collapseParent">-->
+   </div>
+  <!-- </td>-->
+  <!--</tr>-->
+ <!--</div>-->
+ </div>
  <% end %>
+ </div>
+<!-- </table>-->
+<!--</div>-->
 
- </table>
 </div>
 
+<div class="row" id="collapseParent">
+  <div class="col-12 bg-light py-3 border" data-toggle="collapse" data-target="#collapseA" aria-expanded="false"
+    aria-controls="collapseA">見出しA</div>
+  <div class="col-12 collapse" data-parent="#collapseParent" id="collapseA">
+    <div class="p-3">
+      見出しAをクリックしたらこれが開きます。
+      <br>見出しAをクリックしたらこれが開きます。
+      <br>見出しAをクリックしたらこれが開きます。
+      <br>見出しAをクリックしたらこれが開きます。
+ 
+    </div>
+  </div>
+  <div class="col-12 bg-light py-3  border" data-toggle="collapse" data-target="#collapseB"
+    aria-expanded="false" aria-controls="collapseB">見出しB</div>
+  <div class="col-12 collapse" data-parent="#collapseParent" id="collapseB">
+    <div class="p-3">
+      見出しBをクリックしたらこれが開きます。
+      <br>見出しBをクリックしたらこれが開きます。
+      <br>見出しBをクリックしたらこれが開きます。
+      <br>見出しBをクリックしたらこれが開きます。
+      <br><br><br><br>見出しBをクリックしたらこれが開きます。
+ 
+    </div>
+  </div>
+  <div class="col-12 bg-light py-3  border" data-toggle="collapse" data-target="#collapseC"
+    aria-expanded="false" aria-controls="collapseC">見出しC</div>
+  <div class="col-12 collapse" data-parent="#collapseParent" id="collapseC">
+    <div class="p-3">
+      見出しCをクリックしたらこれが開きます。
+      <br>見出しCをクリックしたらこれが開きます。
+      <br>見出しCをクリックしたらこれが開きます。
+      <br><br><br>見出しCをクリックしたらこれが開きます。
+ 
+    </div>
+  </div>
 </div>
-
-<!--<= link_to 'New Product', new_product_path %>-->
-
