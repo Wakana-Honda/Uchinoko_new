@@ -147,7 +147,7 @@ ul{
   position: relative;
   border-top: solid 1px #f00;
   border-radius: 5px;
-  background-color: #fee;
+//   background-color: #fee;
 
   &__label {
     position: absolute;
@@ -172,6 +172,35 @@ ul{
   &__content {
     padding: 20px;
   }
+}
+
+.link{
+  display: block;
+  width: 300px;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-radius: 6px;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #a48c61 0%,
+    #a48c61 50%,
+    #000000 50%,
+    #000000 100%
+  );
+  box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
+  transition: background-position ease 0.4s;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.link:hover {
+  background-position: 0 0;
 }
 
 
@@ -259,35 +288,7 @@ center: 10px;
   transform: translateY(2px);
 }
 
-.fuwafuwa {
-  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
-  display: inline-block;
-  transition: 1.5s ease-in-out;
-  // width: 70px;
-  // height: 70px;
-  margin-top: 15px;
-}
 
-@keyframes fuwafuwa {
-  0% {
-    transform:translate(0, 0) rotate(-7deg);
-  }
-  50% {
-    transform:translate(0, -7px) rotate(0deg);
-  }
-  100% {
-    transform:translate(0, 0) rotate(7deg);
-  }
-}
-
-.hiddenA {
-  text-align: center;
-  animation-name: hidden1;
-  animation-duration: 5.0s;
-  // animation-iteration-count: infinite;
-  margin-top: 15px;
-}
- 
 @keyframes hidden1 {
  
   from {

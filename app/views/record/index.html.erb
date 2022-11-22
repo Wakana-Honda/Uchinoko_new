@@ -1,5 +1,5 @@
  <%= render 'shared/aboutlink' %>
-
+ 
 <div class = "container-lg">
 
 <%= link_to new_record_path, class:"btn btn-warning btn-lg btn-block" do %>
@@ -14,15 +14,7 @@
   <!--<tr>-->
   <!-- <th colspan = "5" >-->
  <div class = "record">
- <div class = "memo" id="collapseParent">
-   <a class="btn btn-primary" data-toggle="collapse" data-target="#collapseMemo" 
-       aria-expanded="false" aria-controls="collapseMemo">
-    memo
-    </a>
-    <div class="collapse" data-parent="#collapseParent" id="collapseMemo">
-      <%= record.memo %>
-    </div>
-  </div>
+   
   <div>
     <%= record.created_at.strftime('%Y/%m/%d %H:%M') %>
     <%= link_to edit_record_path(record) do %>
@@ -47,50 +39,21 @@
    <!--<td>-->
    <!--<div class="row" id="collapseParent">-->
    </div>
+   <!--モーダルメモ-->
+     <a class="btn btn-primary" type="button" data-toggle="collapse" href=<%= "#collapse".concat(record.id.to_s) %>
+       aria-expanded="false" aria-controls=<%= "collapse".concat(record.id.to_s) %>>
+        memo
+    </a>
+    <div class="collapse" id=<%= "collapse".concat(record.id.to_s) %> >
+     <%= record.memo %>
+    </div>
+  <!--モーダルメモ-->
   <!-- </td>-->
   <!--</tr>-->
- <!--</div>-->
  </div>
  <% end %>
- </div>
+
 <!-- </table>-->
 <!--</div>-->
 
-</div>
-
-<div class="row" id="collapseParent">
-  <div class="col-12 bg-light py-3 border" data-toggle="collapse" data-target="#collapseA" aria-expanded="false"
-    aria-controls="collapseA">見出しA</div>
-  <div class="col-12 collapse" data-parent="#collapseParent" id="collapseA">
-    <div class="p-3">
-      見出しAをクリックしたらこれが開きます。
-      <br>見出しAをクリックしたらこれが開きます。
-      <br>見出しAをクリックしたらこれが開きます。
-      <br>見出しAをクリックしたらこれが開きます。
- 
-    </div>
-  </div>
-  <div class="col-12 bg-light py-3  border" data-toggle="collapse" data-target="#collapseB"
-    aria-expanded="false" aria-controls="collapseB">見出しB</div>
-  <div class="col-12 collapse" data-parent="#collapseParent" id="collapseB">
-    <div class="p-3">
-      見出しBをクリックしたらこれが開きます。
-      <br>見出しBをクリックしたらこれが開きます。
-      <br>見出しBをクリックしたらこれが開きます。
-      <br>見出しBをクリックしたらこれが開きます。
-      <br><br><br><br>見出しBをクリックしたらこれが開きます。
- 
-    </div>
-  </div>
-  <div class="col-12 bg-light py-3  border" data-toggle="collapse" data-target="#collapseC"
-    aria-expanded="false" aria-controls="collapseC">見出しC</div>
-  <div class="col-12 collapse" data-parent="#collapseParent" id="collapseC">
-    <div class="p-3">
-      見出しCをクリックしたらこれが開きます。
-      <br>見出しCをクリックしたらこれが開きます。
-      <br>見出しCをクリックしたらこれが開きます。
-      <br><br><br>見出しCをクリックしたらこれが開きます。
- 
-    </div>
-  </div>
 </div>
