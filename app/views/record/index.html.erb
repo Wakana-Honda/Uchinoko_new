@@ -8,52 +8,56 @@
  <i class="fas fa-pen"></i>
 <% end %>
 
-<!--<div class="table-responsive">-->
-<!-- <table class="table table-light table-striped mt-3">-->
+<div class="table-responsive">
+<table class="table text-nowrap table-light table-striped mt-3">
 <% @records.each do |record| %>
-  <!--<tr>-->
-  <!-- <th colspan = "5" >-->
- <div class = "record">
-   
-  <div>
-    <%= record.created_at.strftime('%Y/%m/%d %H:%M') %>
-    <%= link_to edit_record_path(record) do %>
+ <tr>
+  <th colspan = "5" >
+   <%= record.created_at.strftime('%Y/%m/%d %H:%M') %>
+   <%= link_to edit_record_path(record) do %>
      <i class="fas fa-edit"></i>
-    <% end %>
-   <!--</th>-->
-   <!--<th>-->
-    <%= image_tag record.pet.get_pet_image(50,50),class:"rounded-circle mx-3" %>
-    <%= record.pet.name %>
+   <% end %>
+  </th>
+ </tr>
+ <tr>
+  <th style="width: 20%">
+   <!--<div class = "row">-->
+   <!-- <div class = "col-sm-3">-->
+      <div class = "mb-2"><%= image_tag record.pet.get_pet_image(50,50),class:"rounded-circle mx-3" %></div>
+      <span class = "ml-3"><%= record.pet.name %></span>
+  </th>
+    <!--</div>-->
+    <!--<div class = "col-sm-6">-->
+  <td style="width:20%">
+   <div class = "mt-3">
+    <div><%= record.food.name %></div>
+    <span class = '<%= amount_color(record) %>'><%= record.amount %></span>
    </div>
-  <!-- </th>-->
-  <!--</tr>-->
-  
-  <!--<tr>-->
-  <!-- <td>
-  </td>-->
-  <div>
-    <%= image_tag record.food.get_food_image(50,50) %><%= record.food.name %>
-   <!--<td>-->
-    <%= record.amount %>
-    <!--</td>-->
-   <!--<td>-->
-   <!--<div class="row" id="collapseParent">-->
-   </div>
+  </td>
+  <td>
    <!--モーダルメモ-->
-     <a class="btn btn-primary" type="button" data-toggle="collapse" href=<%= "#collapse".concat(record.id.to_s) %>
+   <div class = "mt-3">
+     <a class="btn btn-sm btn-secondary" type="button" data-toggle="collapse" href=<%= "#collapse".concat(record.id.to_s) %>
        aria-expanded="false" aria-controls=<%= "collapse".concat(record.id.to_s) %>>
         memo
-    </a>
-    <div class="collapse" id=<%= "collapse".concat(record.id.to_s) %> >
-     <%= record.memo %>
-    </div>
+     </a>
+     <div class="collapse" id=<%= "collapse".concat(record.id.to_s) %> >
+      <%= record.memo %>
+     </div>
+   </div>
+  </td>
+  
+  </tr>
+  <!-- </div>-->
+  <!--</div>-->
+  <!-- </div>-->
+  <!--</div>-->
   <!--モーダルメモ-->
   <!-- </td>-->
   <!--</tr>-->
- </div>
  <% end %>
 
-<!-- </table>-->
-<!--</div>-->
+</table>
+</div>
 
 </div>

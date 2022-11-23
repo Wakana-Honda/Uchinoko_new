@@ -16,7 +16,7 @@ class Food < ApplicationRecord
    end
     food_image.variant(resize: "#{width}x#{height}").processed
   end
-   
+
   def previous
    end_user.foods.where("id < ?", self.id).order("id DESC").first
   end

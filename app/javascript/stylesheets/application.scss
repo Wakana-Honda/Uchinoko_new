@@ -8,12 +8,12 @@ body{
  }
  
 main{
-  // background-color:#ffffcc; 
+  background-color:#f6e5cc; 
   // linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
-  background: url(/images/back.jpeg);
-  background-repeat: repeat-y;
-  background-size: cover;
-  background-attachment: fixed;
+//   background: url(/images/back.jpeg);
+//   background-repeat: repeat-y;
+//   background-size: cover;
+//   background-attachment: fixed;
  }
  
  #container{
@@ -330,3 +330,14 @@ center: 10px;
   border: dotted 1px #FFF;
 }
 
+.text-green{
+  background-image: linear-gradient(transparent 70%, #98fb98 0%)
+}
+
+.text-yellow{
+  background-image: linear-gradient(transparent 70%, #ffff00 0%)
+}
+
+.text-red{
+  background-image: linear-gradient(transparent 70%, #ff6347 0%)
+}
