@@ -1,4 +1,12 @@
  <%= render 'shared/aboutlink' %>
+ 
+ <div class = "fixed_bottom text-right">
+ <%= link_to new_food_path, class:"btn btn-warning my-3 mr-3" do %>
+  <i class="fas fa-bone"></i>
+  フードを追加する
+  <i class="fas fa-chevron-right"></i>
+ <% end %>
+</div>
 
 <div class = "container-lg">
 
@@ -12,14 +20,6 @@
    <div class = "text-center py-3"><span class = "sticky"><%= food.name %></span></div>
    <% end %>
   </div>
- <% end %>
-</div>
-
-<div class = "fixed_bottom text-right">
- <%= link_to new_food_path, class:"btn btn-warning my-3 mr-3" do %>
-  <i class="fas fa-bone"></i>
-  フードを追加する
-  <i class="fas fa-chevron-right"></i>
  <% end %>
 </div>
 

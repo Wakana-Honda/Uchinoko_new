@@ -12,7 +12,8 @@ class Pet < ApplicationRecord
     pet_image.variant(resize: "#{width}x#{height}").processed
   end
   
-  validates :name, presence: true
+  validates :name, presence: true,length: { minimum: 1, maximum: 10 }
+  validates :memo, length: { maximum: 50 }
   
   enum gender: { man: 0, woman: 1}
   

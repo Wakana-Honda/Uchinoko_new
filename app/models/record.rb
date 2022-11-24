@@ -6,6 +6,7 @@ class Record < ApplicationRecord
   validates :pet_id, presence: true
   validates :food_id, presence: true
   validates :amount, presence: true
+  validates :memo, length: { maximum: 50 }
 
   default_scope -> { order(created_at: :desc) }
   

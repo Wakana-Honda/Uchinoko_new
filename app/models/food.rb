@@ -24,9 +24,10 @@ class Food < ApplicationRecord
    end_user.foods.where("id > ?", self.id).order("id ASC").first
   end
   
-   validates :name, presence: true
+   validates :name, presence: true,length: { minimum: 1, maximum: 20 }
    validates :type_id, presence: true
    validates :genre_id, presence: true
+   validates :memo, length: { maximum: 50 }
 
 end
 
