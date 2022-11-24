@@ -51,15 +51,6 @@ main{
   animation: sample 2.5s 0s;
   width: 360px;
 }
-// .textb br {
-//   display: none;
-// }
-
-// @media only screen and (max-width: 500px) {
-//  .textb br {
-//   display: inline;
-//   }
-// }
 
  .image1 {
   background-image: url(/images/image1.jpg);
@@ -143,42 +134,12 @@ ul{
  list-style: none;
 }
 
-.area {
-  position: relative;
-  border-top: solid 1px #f00;
-  border-radius: 5px;
-//   background-color: #fee;
-
-  &__label {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    font-weight: 600;
-    padding: 0 10px;  // paddingを左右にいれて消す線の長さを延ばす
-    transform: translateY(-50%);
-
-    &::before {
-      position: absolute;
-      z-index: -1;  // 何もしないと線が上に来ていたので-1して後ろに回り込ませる
-      left: 0;
-      bottom: 50%;  // top: 50%だと1pxずれていたのでbottomから計算する
-      width: 100%;  // 親要素の幅を参照するため必ず文字分は消せる
-      height: 1px;
-      background-color: #fff;
-      content: '';
-    }
-  }
-
-  &__content {
-    padding: 20px;
-  }
-}
 
 .link{
   display: block;
-  width: 300px;
+//   width: 650px;
   padding: 10px 0;
-  margin: 10px 0;
+  margin: 10px 0px 35px 0px;
   border-radius: 6px;
   background-repeat: no-repeat;
   background-position: 100% 0;
@@ -187,8 +148,8 @@ ul{
     to right,
     #a48c61 0%,
     #a48c61 50%,
-    #000000 50%,
-    #000000 100%
+    #e6b85c 50%,
+    #e6b85c 100%
   );
   box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
   transition: background-position ease 0.4s;

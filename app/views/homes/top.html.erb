@@ -20,27 +20,20 @@
 <br><br>
 <div class = "container-lg">
 <% if end_user_signed_in? %>
- <div class="area">
-  <div class="area__label">初めての方</div>
-  <div class="area__content">
-   
    <div class = "link">
     <span>STEP1</span>
-    <%= link_to "ウチの子を登録しよう", pet_index_path, class:'nav-link text-dark' %>
+    <%= link_to "ウチの子を登録しよう", new_pet_path, class:'nav-link text-dark' %>
    </div>
    <div class = "link">
     <span>STEP2</span>
-    <%= link_to "フードを登録しましょう", food_index_path, class:'nav-link text-dark'%>
+    <%= link_to "フードを登録しましょう", new_food_path, class:'nav-link text-dark'%>
    </div>
    <div class = "link">
     <span>STEP3</span>
-    <%= link_to "記録しましょう" ,record_index_path, class:'nav-link text-dark' %>
+    <%= link_to "記録しましょう" ,new_record_path, class:'nav-link text-dark' %>
    </div>
- 
- </div>
- </div>
 <% else %>
- <%= link_to "ログイン",new_end_user_session_path, class:"btn btn-dark btn-lg btn-block" %>
+ <%= link_to "ログイン",new_end_user_session_path, class:"btn btn-dark btn-lg btn-block mb-3" %>
  <%= link_to "新規登録",new_end_user_registration_path, class:"btn btn-primary btn-lg btn-block mb-3" %>
 <% end %>
 </div>
