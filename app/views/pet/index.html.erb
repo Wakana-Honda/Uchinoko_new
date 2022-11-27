@@ -18,7 +18,7 @@
 <div class = "row">
  
  <div class = "col-sm-6">
-  <div class = "my-3 mx-3">
+  <div class = "mt-3 mx-3">
     <%= image_tag pet.get_pet_image(200,200),class:"rounded-circle mx-3" %>
     <div class = "row justify-content-center"> 
      <%= link_to edit_pet_path(pet) do %>
@@ -43,7 +43,7 @@
    </td>
   </tr>
   <tr>
-   <th>誕生日</th>
+   <th nowrap>誕生日</th>
    <td class = "btd">
     <% if pet.age == nil %>
      no date
@@ -71,11 +71,11 @@
 </div>
 
 <div class = "col-sm-6">
- <br><br>
- <div class = "h4 py-3 text-center"><span class = "liner">
+ <div class = "h5 py-3 text-center"><span class = "liner">
   <i class="fas fa-paw"></i><%= pet.name %>ちゃんの記録<i class="fas fa-paw"></i>
   </span></div>
- <div class = "my-3"><%= pie_chart pet.foods.group(:name).count %></div>
+ 
+ <div class = "my-3"><%= pie_chart pet_foots_per(pet), suffix: "%" %></div>
 </div>
 
 </div>

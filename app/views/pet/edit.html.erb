@@ -15,11 +15,11 @@
  </div>
  <div class="form-group">
   <%= f.label :年齢 %>
-  <%= f.select :age, *[0..30] %>
+  <%= f.select :age, *[0..30], prompt:"--" %>
  </div>
  <div class="form-group">
   <%= f.label :誕生日 %>
-  <%= f.date_select :birthday, use_month_numbers: true,
+  <%= f.date_select :birthday, use_month_numbers: true, prompt:"--",
      start_year: 1990, end_year: (Time.now.year), default: Date.new(1989, 1, 1) %>
 
  </div>

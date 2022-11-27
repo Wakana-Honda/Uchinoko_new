@@ -13,7 +13,7 @@ class Pet < ApplicationRecord
   end
   
   validates :name, presence: true,length: { minimum: 1, maximum: 10 }
-  validates :memo, length: { maximum: 50 }
+  validates :memo, length: { maximum: 30 }
   
   enum gender: { man: 0, woman: 1}
   

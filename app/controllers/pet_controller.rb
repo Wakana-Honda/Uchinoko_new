@@ -16,7 +16,7 @@ class PetController < ApplicationController
   def index
    @pets = Pet.all
    @pets = current_end_user.pets
-  end
+ end
   
   # def show
   #  # binding pry
