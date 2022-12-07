@@ -53,7 +53,7 @@ main{
 }
 
  .image1 {
-  background-image: image-url("../images/image1.jpg");
+  background-image: url("../images/image1.jpg");
   background-color: rgba(160,144,137,0.4);
   //混合モードの指定になります。
   background-blend-mode:lighten;
@@ -63,7 +63,7 @@ main{
   background-position: top 50px ;
  }
  .image2 {
-  background-image: image-url("../images/image2.jpg");
+  background-image: url("../images/image2.jpg");
   background-color: rgba(160,144,137,0.4);
   //混合モードの指定になります。
   background-blend-mode:lighten;
@@ -73,7 +73,7 @@ main{
   background-position: center;
  }
  .image3 {
-  background-image: image-url("../images/image3.jpg");
+  background-image: url("../images/image3.jpg");
   background-color: rgba(160,144,137,0.4);
   //混合モードの指定になります。
   background-blend-mode:lighten;
