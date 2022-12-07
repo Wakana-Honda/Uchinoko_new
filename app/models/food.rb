@@ -14,8 +14,9 @@ class Food < ApplicationRecord
     file_path = Rails.root.join('app/assets/images/no_image.jpeg')
     food_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
    end
-    food_image.variant(resize: "#{width}x#{height}").processed
+    food_image.variant(resize:"#{width}x#{height}").processed
   end
+# "#{width}x#{height}"
 
   def previous
    end_user.foods.where("id < ?", self.id).order("id DESC").first
