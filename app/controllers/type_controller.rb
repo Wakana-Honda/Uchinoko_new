@@ -1,4 +1,7 @@
 class TypeController < ApplicationController
+ before_action :set_type, only: [:edit, :update, :destroy]
+ before_action :set_url, only: [:edit, :update, :destroy]
+  
   def index
    @type = Type.new
    @types = Type.all
@@ -38,6 +41,17 @@ def destroy
 end
 
 private
+#直叩き防止
+  def set_type
+      @type = Type.find(params[:id])
+  end
+
+  def set_url
+    if @type.end_user_id != current_end_user.id
+      redirect_to new_end_user_session_path
+    end
+  end
+  
   def type_params
     params.require(:type).permit(:name)
   end

@@ -1,4 +1,7 @@
 class FoodController < ApplicationController
+ before_action :set_food, only: [:show,:edit, :update, :destroy]
+ before_action :set_url, only: [:show,:edit, :update, :destroy]
+
   def new
    @food = Food.new
    
@@ -59,6 +62,17 @@ class FoodController < ApplicationController
   end
   
   private
+  #直叩き防止
+  def set_food
+      @food = Food.find(params[:id])
+  end
+
+  def set_url
+    if @food.end_user_id != current_end_user.id
+      redirect_to new_end_user_session_path
+    end
+  end
+  
   # ストロングパラメータ
   def food_params
     params.require(:food).permit(:type_id, :name,:memo,:food_image, :genre_id)

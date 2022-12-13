@@ -1,4 +1,7 @@
 class RecordController < ApplicationController
+ before_action :set_record, only: [:edit, :update, :destroy]
+ before_action :set_url, only: [:edit, :update, :destroy]
+ 
   def new
    @record = Record.new
    @pets = current_end_user.pets
@@ -44,6 +47,16 @@ class RecordController < ApplicationController
   end
   
   private
+  #直叩き防止
+  def set_record
+      @record = Record.find(params[:id])
+  end
+
+  def set_url
+    if @record.end_user_id != current_end_user.id
+      redirect_to new_end_user_session_path
+    end
+  end
   
   def record_params
     params.require(:record).permit(:amount,:memo,:pet_id,:food_id)

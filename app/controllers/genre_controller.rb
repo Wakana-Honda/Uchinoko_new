@@ -1,4 +1,7 @@
 class GenreController < ApplicationController
+ before_action :set_genre, only: [:edit, :update, :destroy]
+ before_action :set_url, only: [:edit, :update, :destroy]
+
   def index
     @genre = Genre.new
     @genres = Genre.all
@@ -38,6 +41,16 @@ class GenreController < ApplicationController
   end
 
   private
+  #直叩き防止
+  def set_genre
+      @genre = Genre.find(params[:id])
+  end
+
+  def set_url
+    if @genre.end_user_id != current_end_user.id
+      redirect_to new_end_user_session_path
+    end
+  end
   
   def genre_params
     params.require(:genre).permit(:name)

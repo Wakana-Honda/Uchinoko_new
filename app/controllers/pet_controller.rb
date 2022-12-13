@@ -1,4 +1,7 @@
 class PetController < ApplicationController
+ before_action :set_pet, only: [:edit, :update, :destroy]
+ before_action :set_url, only: [:edit, :update, :destroy]
+ 
   def new
    @pet = Pet.new
   end
@@ -17,20 +20,6 @@ class PetController < ApplicationController
    @pets = Pet.all
    @pets = current_end_user.pets
  end
-  
-  # def show
-  #  # binding pry
-  #  @pets = Pet.all
-  #  @pets = current_end_user.pets
-  #  @pet = Pet.find(params[:id])
-  #  # @pet = Pet.find_by(age: params[:pet][:age])
-  #  if Pet.exists?(age: params[:pet][:age])
-  #    "#{params[:pet][:age]}歳"
-  #  else
-  #   "no date"
-  #  end
-   
-  # end
   
   def edit
    @pet = Pet.find(params[:id])
@@ -52,6 +41,17 @@ class PetController < ApplicationController
   end
   
   private
+  #直叩き防止
+  def set_pet
+      @pet = Pet.find(params[:id])
+  end
+
+  def set_url
+    if @pet.end_user_id != current_end_user.id
+      redirect_to new_end_user_session_path
+    end
+  end
+  
   # ストロングパラメータ
   def pet_params
     params.require(:pet).permit(:name,:pet_image,:age,:birthday,:gender,:memo)
