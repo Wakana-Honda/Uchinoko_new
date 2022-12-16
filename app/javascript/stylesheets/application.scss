@@ -2,6 +2,7 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import "skippr"; 
 
+
 body{
  font-family:Meiryo ;
  color: #555;
@@ -16,6 +17,7 @@ main{
 //   background-attachment: fixed;
  }
  
+
  #container{
   height: 400px;
   width: 100%;
@@ -227,6 +229,7 @@ center: 10px;
 .table{
   // width: 400px;
   max-width: 100%;
+  background-color: #f8f9fa
 }
 
 .sticky {

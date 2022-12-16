@@ -63,6 +63,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem "enum_help"
 gem 'image_processing', '~> 1.2'
 gem 'chartkick'
+gem 'simple_calendar', '~> 2.0'
 gem 'bulma-rails', '~> 0.7.4'
 gem 'bulma-extensions-rails', '~> 1.0.30'
 gem 'dotenv-rails'

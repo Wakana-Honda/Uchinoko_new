@@ -8,12 +8,12 @@
 
  <div class="form-group">
   <%= f.label :うちの子の名前 %>
-  <%= f.collection_select :pet_id, Pet.all, :id, :name, options = { include_blank: "選択してください" } %>
+  <%= f.collection_select :pet_id, @pets, :id, :name, options = { include_blank: "選択してください" } %>
  </div>
  
  <div class="form-group">
   <%= f.label :フード名 %>
-  <%= f.collection_select :food_id, Food.all, :id, :name, options = { include_blank: "選択してください" } %>
+  <%= f.collection_select :food_id, @foods, :id, :name, options = { include_blank: "選択してください" } %>
  </div>
  
  <div class="form-group">

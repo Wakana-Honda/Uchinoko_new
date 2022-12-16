@@ -25,9 +25,17 @@ class RecordController < ApplicationController
    @records = current_end_user.records
    @pet = current_end_user.pets
   end
+  
+  def calendar
+   @records = Record.all
+   @records = current_end_user.records
+   @pet = current_end_user.pets
+  end
 
   def edit
    @record = Record.find(params[:id])
+   @pets = current_end_user.pets
+   @foods = current_end_user.foods
   end
   
   def update
@@ -59,7 +67,7 @@ class RecordController < ApplicationController
   end
   
   def record_params
-    params.require(:record).permit(:amount,:memo,:pet_id,:food_id)
+    params.require(:record).permit(:amount,:memo,:pet_id,:food_id,:start_time)
     # ,:pet_name,:food_name
   end
   

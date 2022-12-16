@@ -24,3 +24,8 @@ ja:
         gender:
           man: "オス"
           woman: "メス"
+ 
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    

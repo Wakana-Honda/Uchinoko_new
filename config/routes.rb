@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   
   resources:genre,only:[:index,:create,:edit,:update,:destroy]
   resources:type,only:[:index,:create,:edit,:update,:destroy]
-  resources:record
+  resources:record do
+   collection do
+    get '/calendar'=>"record#calendar"
+   end
+  end
   resources:food
   resources:pet
   
