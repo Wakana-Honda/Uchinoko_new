@@ -27,6 +27,7 @@ class RecordController < ApplicationController
   end
   
   def calendar
+   # @record = Record.find(params[:id])
    @records = Record.all
    @records = current_end_user.records
    @pet = current_end_user.pets
