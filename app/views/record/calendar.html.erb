@@ -1,15 +1,15 @@
-カレンダーだよ
 <div class="calendar mx-3">
-<%= month_calendar records: @records do |date, records| %>
+<%= month_calendar events: @records do |date, records| %>
+  
   <%= date.day %>
   <!--<span class="calendar-title"><%#= start_date.year %>年  <%#= t('date.month_names')[start_date.month] %></span>-->
   
   <% @records.each do |record| %>
-    <div>
-     <%= record.pet.name %>
-      <%#= link_to blog.title, blog %>
-    </div>
+   <%if record.created_at.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d') %> 
+    <div><%= record.pet.name %></div>
+   <%end%>
   <% end %>
 <% end %>
 </div>
 
+ <%#= link_to blog.title, blog %>
