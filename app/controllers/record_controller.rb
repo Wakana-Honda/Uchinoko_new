@@ -27,10 +27,19 @@ class RecordController < ApplicationController
   end
   
   def calendar
+   # binding.pry
    # @record = Record.find(params[:id])
-   @records = Record.all
+   # @records = Record.all
+   @records = Record.select(:pet_id).distinct
    @records = current_end_user.records
-   @pet = current_end_user.pets
+   # @pet = current_end_user.pets
+   # @record.pet.name = Record.select(:pet_id).distinct
+  end
+  
+  def show
+   @record = Record.find(params[:id])
+   @pets = current_end_user.pets
+   @foods = current_end_user.foods
   end
 
   def edit

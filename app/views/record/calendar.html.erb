@@ -6,10 +6,25 @@
   
   <% @records.each do |record| %>
    <%if record.created_at.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d') %> 
-    <div><%= record.pet.name %></div>
-   <%end%>
+   
+      <% if record.pet.name == record.pet.name %>
+       <div>
+        <%= link_to record_path(record.id) do %>
+         <%= record.pet.name %>
+        <% end %>
+       </div>
+       <% else %>
+        <%= link_to record_path(record.id) do %>
+         <%= record.pet.name %>
+        <% end %>
+      <% end %>
+      
+   <% end %>
+   
   <% end %>
+  
 <% end %>
 </div>
 
  <%#= link_to blog.title, blog %>
+ <!--Record.group(:pet_id) -->

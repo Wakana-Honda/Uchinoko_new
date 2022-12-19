@@ -6,7 +6,7 @@
  <h3><strong>記録詳細</strong></h3>
 </div>
 
-<%= pie_chart Record.group(:food_id).count %>
+<%#= pie_chart Record.group(:food_id).count %>
 
 <%= @record.pet.name %>
 <%= @record.food.name %>
@@ -17,3 +17,4 @@
 <%= link_to "記録を編集する",edit_record_path(@record), class:"btn btn-primary" %>
 
 </div>
+
