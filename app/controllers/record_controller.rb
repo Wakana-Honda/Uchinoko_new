@@ -27,13 +27,9 @@ class RecordController < ApplicationController
   end
   
   def calendar
-   # binding.pry
-   # @record = Record.find(params[:id])
-   # @records = Record.all
-   @records = Record.select(:pet_id).distinct
-   @records = current_end_user.records
+   @records = Record.all
+   @records = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
    # @pet = current_end_user.pets
-   # @record.pet.name = Record.select(:pet_id).distinct
   end
   
   def show

@@ -1,6 +1,6 @@
 class PetController < ApplicationController
- before_action :set_pet, only: [:edit, :update, :destroy]
- before_action :set_url, only: [:edit, :update, :destroy]
+ before_action :set_pet, only: [:show, :edit, :update, :destroy]
+ before_action :set_url, only: [:show, :edit, :update, :destroy]
  
   def new
    @pet = Pet.new
@@ -19,7 +19,14 @@ class PetController < ApplicationController
   def index
    @pets = Pet.all
    @pets = current_end_user.pets
- end
+  end
+ 
+  def show
+   @record = Record.find(params[:id])
+   @pets = current_end_user.pets
+   @foods = current_end_user.foods
+   @pet = Pet.find(params[:id])
+  end
   
   def edit
    @pet = Pet.find(params[:id])

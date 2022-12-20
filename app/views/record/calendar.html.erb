@@ -2,22 +2,21 @@
 <%= month_calendar events: @records do |date, records| %>
   
   <%= date.day %>
-  <!--<span class="calendar-title"><%#= start_date.year %>年  <%#= t('date.month_names')[start_date.month] %></span>-->
-  
+
   <% @records.each do |record| %>
    <%if record.created_at.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d') %> 
    
-      <% if record.pet.name == record.pet.name %>
+      <%# if record.pet.name == record.pet.name %>
        <div>
-        <%= link_to record_path(record.id) do %>
+        <%= link_to pet_path(record.pet.id) do %>
          <%= record.pet.name %>
         <% end %>
        </div>
-       <% else %>
-        <%= link_to record_path(record.id) do %>
-         <%= record.pet.name %>
-        <% end %>
-      <% end %>
+       <%# else %>
+        <%#= link_to record_path(record.id) do %>
+         <%#= record.pet.name %>
+        <%# end %>
+      <%#end %>
       
    <% end %>
    
@@ -26,5 +25,3 @@
 <% end %>
 </div>
 
- <%#= link_to blog.title, blog %>
- <!--Record.group(:pet_id) -->
