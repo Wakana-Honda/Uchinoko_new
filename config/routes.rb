@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources:record do
    collection do
     get '/calendar'=>"record#calendar"
+    get '/search'=>"record#search"
    end
   end
   resources:food

@@ -10,9 +10,16 @@
 
 <%= link_to "カレンダー",calendar_record_index_path %>
 
+<%= form_tag(search_record_index_path, method: "get") do %>
+  <%#= select_tag(:pet_id, @pet_id) %>
+  <%= select_tag(:pet_id, options_for_select([["8"],["い"]]))%>
+  <%= submit_tag "絞り込み" %>
+<% end %>
+
 <div class="table-responsive">
 <table class="table text-nowrap table-light table-striped mt-3">
 <% @records.each do |record| %>
+
  <tr>
   <th colspan = "5" >
    <%= record.created_at.strftime('%Y/%m/%d %H:%M') %>

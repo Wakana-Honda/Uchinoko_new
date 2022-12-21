@@ -1,20 +1,20 @@
- <%= render 'shared/aboutlink' %>
- 
-<div class = "container-lg">
-
 <div class = "title">
- <h3><strong>記録詳細</strong></h3>
+ <h5><strong><%#= @record_pet.pet_id %>XXXちゃんの記録</strong></h5RE>
 </div>
 
-<%#= pie_chart Record.group(:food_id).count %>
+<% @record_pet.each do |record| %>
+<div>
+ <span><%= record.pet.name %></span>
+ <span><%= record.food.name %></span>
+ <span><%= record.amount %></span>
+ <span><%= record.memo %></span>
+</div>
 
-<%= @record.pet.name %>
-<%= @record.food.name %>
-<%= @record.amount %>
-<%= @record.memo %>
+<% end %>
 
 <%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-secondary" %>
-<%= link_to "記録を編集する",edit_record_path(@record), class:"btn btn-primary" %>
+<%#= link_to "記録を編集する",edit_record_path(@record), class:"btn btn-primary" %>
 
-</div>
+<%= pie_chart Record.group(:food_id).count %>
+
 

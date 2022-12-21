@@ -24,18 +24,28 @@ class RecordController < ApplicationController
    @records = Record.all
    @records = current_end_user.records
    @pet = current_end_user.pets
+   @pet_id = Record.group(:pet_id).pluck(:pet_id).sort
+  end
+  
+  def search
+   @records = Record.where('pet_id LIKE ?', "%#{params[:pet_id]}%")
+   @pet_id = Record.group(:pet_id).pluck(:pet_id).sort
+   render :index
+  # pet_name = params[:pet_id]
+   # @records = Record.where('pet_name LIKE?', "%#{pet_name}%")
   end
   
   def calendar
    @records = Record.all
    @records = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
-   # @pet = current_end_user.pets
   end
   
   def show
-   @record = Record.find(params[:id])
-   @pets = current_end_user.pets
-   @foods = current_end_user.foods
+   # binding.pry
+   @record_pet = Record.where(pet_id: "8")
+   #@pet = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
+   #@pets = Pet.find(params[:id])
+   #@record_pet = Record.where(pet_id: @pet)
   end
 
   def edit

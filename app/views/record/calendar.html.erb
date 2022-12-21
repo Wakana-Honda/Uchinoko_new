@@ -8,7 +8,8 @@
    
       <%# if record.pet.name == record.pet.name %>
        <div>
-        <%= link_to pet_path(record.pet.id) do %>
+        <%= link_to record_path(record.id) do %>
+        <!--record.pet.id-->
          <%= record.pet.name %>
         <% end %>
        </div>
@@ -21,7 +22,7 @@
    <% end %>
    
   <% end %>
-  
+
 <% end %>
 </div>
 
