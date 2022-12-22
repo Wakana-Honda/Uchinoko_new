@@ -5,20 +5,11 @@
 
   <% @records.each do |record| %>
    <%if record.created_at.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d') %> 
-   
-      <%# if record.pet.name == record.pet.name %>
-       <div>
-        <%= link_to record_path(record.id) do %>
-        <!--record.pet.id-->
-         <%= record.pet.name %>
-        <% end %>
+    <div>
+     <%= link_to record_path(record.id) do %>
+      <%= record.pet.name %>
+     <% end %>
        </div>
-       <%# else %>
-        <%#= link_to record_path(record.id) do %>
-         <%#= record.pet.name %>
-        <%# end %>
-      <%#end %>
-      
    <% end %>
    
   <% end %>

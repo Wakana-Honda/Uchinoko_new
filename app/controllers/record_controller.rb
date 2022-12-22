@@ -23,12 +23,12 @@ class RecordController < ApplicationController
   def index
    @records = Record.all
    @records = current_end_user.records
-   @pet = current_end_user.pets
    @pet_id = Record.group(:pet_id).pluck(:pet_id).sort
   end
   
   def search
    @records = Record.where('pet_id LIKE ?', "%#{params[:pet_id]}%")
+   @records = current_end_user.records
    @pet_id = Record.group(:pet_id).pluck(:pet_id).sort
    render :index
   # pet_name = params[:pet_id]
