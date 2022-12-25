@@ -1,3 +1,5 @@
+<%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-secondary" %>
+
 <div class = "title">
  <h5><strong><%#= @record_pet.pet_id %>XXXちゃんの記録</strong></h5RE>
 </div>
@@ -11,9 +13,6 @@
 </div>
 
 <% end %>
-
-<%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-secondary" %>
-<%#= link_to "記録を編集する",edit_record_path(@record), class:"btn btn-primary" %>
 
 <%= pie_chart Record.group(:food_id).count %>
 
