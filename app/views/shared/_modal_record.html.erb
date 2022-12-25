@@ -1,0 +1,18 @@
+<%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-secondary" %>
+
+<div class = "title">
+ <h5><strong><%#= @record_pet.pet_id %>XXXちゃんの記録</strong></h5RE>
+</div>
+
+<%= date %>
+
+<% @record_pet.each do |record| %>
+<div>
+ <span><%= record.pet.name %></span>
+ <span><%= record.food.name %></span>
+ <!--<span><%#= record.amount %></span>-->
+ <!--<span><%#= record.memo %></span>-->
+</div>
+
+<% end %>
+

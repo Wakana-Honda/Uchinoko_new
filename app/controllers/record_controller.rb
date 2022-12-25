@@ -30,12 +30,16 @@ class RecordController < ApplicationController
    pet_id = params[:pet_id]
    @records = Record.where('pet_id LIKE?', "%#{pet_id}%")
    @pets = current_end_user.pets
-   # render :index
   end
   
   def calendar
-   @records = Record.all
+   # @records = Record.all
    @records = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
+   @record_pet = Record.where(pet_id: current_end_user.pets)
+
+   # pets = "8"
+   # @record_pet = Record.left_joins(:pet).where(:pet => {:id =>[pets]})
+   # :pet => {:name =>["い"]}
   end
   
   def show
