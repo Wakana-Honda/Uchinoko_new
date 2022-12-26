@@ -1,4 +1,4 @@
-<div class="calendar mx-3">
+<div class="calendar">
 <%= month_calendar events: @records do |date, records| %>
   
   <%= date.day %>
@@ -6,8 +6,9 @@
   <% @records.each do |record| %>
    <%if record.created_at.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d') %> 
     <div>
-     <%= link_to record_path(record) do %>
-      <%= record.pet.name %>
+     <%= link_to record_path(record), class:"btn btn-sm btn-primary px-3 rounded-pill my-1" do %>
+      <%= record.pet.name.slice(0)%>
+      <!--.slice(0)-->
      <% end %>
     </div>
    <% end %>
@@ -16,4 +17,10 @@
 <% end %>
 </div>
 
-<%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-secondary" %>
+<%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-sm btn-secondary" %>
+<%= link_to "カレンダーに戻る",calendar_record_index_path, class:"btn btn-sm btn-secondary" %>
+
+<br><br>
+
+
+
