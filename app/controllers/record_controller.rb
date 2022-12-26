@@ -33,17 +33,12 @@ class RecordController < ApplicationController
   end
   
   def calendar
-   # @records = Record.all
    @records = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
-   @record_pet = Record.where(pet_id: current_end_user.pets)
-
-   # pets = "8"
-   # @record_pet = Record.left_joins(:pet).where(:pet => {:id =>[pets]})
-   # :pet => {:name =>["い"]}
   end
   
   def show
-   @record_pet = Record.where(pet_id: "8")
+   @record = Record.find(params[:id])
+   @records = current_end_user.records
   end
 
   def edit
@@ -82,7 +77,6 @@ class RecordController < ApplicationController
   
   def record_params
     params.require(:record).permit(:amount,:memo,:pet_id,:food_id,:start_time)
-    # ,:pet_name,:food_name
   end
   
 end
