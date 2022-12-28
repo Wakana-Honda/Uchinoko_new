@@ -1,7 +1,4 @@
- <%= render 'shared/aboutlink' %>
- <div class = "container-lg">
- <div class="table-responsive">
-
+<div class="table-responsive">
 <div class="calendar">
 <%= month_calendar events: @records do |date, records| %>
   <%= date.day %>
@@ -19,16 +16,3 @@
 </div>
 
 </div>
-<div class="fixed-bottom">
-<%= link_to "記録一覧に戻る",record_index_path, class:"btn btn-sm btn-secondary" %>
-<%= link_to "カレンダーに戻る",calendar_record_index_path, class:"btn btn-sm btn-secondary" %>
-</div>
-</div>
-
-
-
-
-
-
-
-

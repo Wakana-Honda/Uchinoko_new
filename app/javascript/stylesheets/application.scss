@@ -2,7 +2,6 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import "skippr"; 
 
-
 body{
  font-family:Meiryo ;
  color: #555;
@@ -10,11 +9,6 @@ body{
  
 main{
   background-color:#f6e5cc; 
-  // linear-gradient(to bottom, rgba(255,226,197,0.5) 0%, rgba(255,226,197,0.5) 100%),
-//   background: url(/images/back.jpeg);
-//   background-repeat: repeat-y;
-//   background-size: cover;
-//   background-attachment: fixed;
  }
  
 
@@ -305,3 +299,50 @@ center: 10px;
   background-image: linear-gradient(transparent 70%, #ff6347 0%)
 }
 
+
+.tab01 {
+  width: 100%;
+  margin: 0 auto 50px;
+}
+/*タブのスタイル*/
+.tab_menu {
+  width: calc(100%/3);
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  text-align: center;
+  color: #000;
+  border-bottom: 3px solid #1f71b5;
+  background-color: #d9d9d9;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_menu:hover {
+  opacity: 0.75;
+}
+/*ラジオボタンを全て消す*/
+input[name="tab_menu"] {
+  display: none;
+}
+/*タブ切り替えの中身のスタイル*/
+.tab_contents {
+  display: none;
+  // padding: 40px;
+  clear: both;
+  overflow: hidden;
+  transition: .5s opacity;
+  // box-shadow: 0 0 3px rgba(0,0,0,.2);
+}
+/*選択されているタブを表示*/
+#menu01:checked ~ #menu01,
+#menu02:checked ~ #menu02{
+  display: block;
+}
+/*選択されているタブのスタイル*/
+.tab01 input:checked + .tab_menu {
+  background-color: #1f71b5;
+  color: #fff;
+}

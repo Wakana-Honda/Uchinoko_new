@@ -8,8 +8,10 @@
  <i class="fas fa-pen"></i>
 <% end %>
 
-<%= link_to "カレンダー",calendar_record_index_path %>
-
+<div class="tab01 mt-3">
+<input id="menu01" type="radio" name="tab_menu" checked><label class="tab_menu" for="menu01">記録一覧</label>
+<input id="menu02" type="radio" name="tab_menu"><label class="tab_menu" for="menu02">カレンダー</label>
+<div class="tab_contents" id="menu01">
 <%= form_with url: search_record_index_path, local: true, method: :get do |form| %>
  <%= form.collection_select :pet_id, @pets, :id, :name, options = { include_blank: "名前で検索" } %>
  <%= form.submit "検索" %>
@@ -57,6 +59,14 @@
  <% end %>
 
 </table>
+
+</div>
+</div>
+<div class="tab_contents" id="menu02">
+ <%= render 'shared/calendar' %>
+</div>
+
+<!--tabの締め-->
 </div>
 
 </div>
