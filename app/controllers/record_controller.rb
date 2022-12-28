@@ -24,6 +24,7 @@ class RecordController < ApplicationController
    @records = Record.all
    @records = current_end_user.records
    @pets = current_end_user.pets
+   @record_cale = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
   end
   
   def search
@@ -33,7 +34,7 @@ class RecordController < ApplicationController
   end
   
   def calendar
-   @records = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
+   @record_cale = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
   end
   
   def show

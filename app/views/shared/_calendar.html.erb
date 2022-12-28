@@ -1,8 +1,8 @@
 <div class="table-responsive">
 <div class="calendar">
-<%= month_calendar events: @records do |date, records| %>
+<%= month_calendar events: @record_cale do |date, records| %>
   <%= date.day %>
-  <% @records.each do |record| %>
+  <% @record_cale.each do |record| %>
    <%if record.created_at.strftime('%Y-%m-%d') == date.strftime('%Y-%m-%d') %> 
     <div>
      <%= link_to record_path(record), class:"btn btn-sm btn-primary px-3 rounded-pill my-1" do %>
