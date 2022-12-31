@@ -64,6 +64,8 @@ gem "enum_help"
 gem 'image_processing', '~> 1.2'
 gem 'chartkick'
 gem 'simple_calendar', '~> 2.0'
+gem 'kaminari','~> 1.2.1'
+gem 'bootstrap4-kaminari-views'
 gem 'bulma-rails', '~> 0.7.4'
 gem 'bulma-extensions-rails', '~> 1.0.30'
 gem 'dotenv-rails'

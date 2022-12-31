@@ -21,8 +21,8 @@ class RecordController < ApplicationController
   end
 
   def index
-   @records = Record.all
-   @records = current_end_user.records
+   @records = Record.page(params[:page])
+   @records = current_end_user.records.page(params[:page])
    @pets = current_end_user.pets
    @record_cale = current_end_user.records.select("*, date(created_at)").group(:pet_id, "date(created_at)")
   end
@@ -30,6 +30,7 @@ class RecordController < ApplicationController
   def search
    pet_id = params[:pet_id]
    @records = Record.where('pet_id LIKE?', "%#{pet_id}%")
+   @records = @records.page(params[:page])
    @pets = current_end_user.pets
   end
   
