@@ -20,6 +20,9 @@
  <tr>
   <th colspan = "5" >
   <%= record.created_at.strftime('%H:%M') %>
+  <%= link_to edit_record_path(record) do %>
+     <i class="fas fa-edit"></i>
+   <% end %>
   </th>
  </tr>
  <tr>
